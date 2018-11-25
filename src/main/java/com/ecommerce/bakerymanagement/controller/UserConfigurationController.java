@@ -15,13 +15,12 @@ import com.ecommerce.bakerymanagement.model.CakeMasterDetails;
 import com.ecommerce.bakerymanagement.model.UserTracking;
 
 @RestController
-@Component
 public class UserConfigurationController {
 	
 	@Autowired
 	private IBakeryManagementMasterClient  iBakeryManagementMasterClient;
 
-	@PostMapping(name = WebConstants.ORDER_DETAILS, consumes = MediaType.APPLICATION_JSON_VALUE)
+	/*@PostMapping(name = WebConstants.ORDER_DETAILS, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void saveOrderDetails(@RequestBody UserTracking userTracking, HttpServletResponse httpServletResponse) {
 
 		try {
@@ -29,7 +28,7 @@ public class UserConfigurationController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	
 	

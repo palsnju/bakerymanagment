@@ -1,17 +1,17 @@
 package com.ecommerce.bakerymanagement;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 	
-@EnableAutoConfiguration
 @SpringBootApplication
-@ComponentScan({ "com.ecommerce.bakerymanagement..*"})
+@ComponentScan({"com.ecommerce.bakerymanagement"})
+@EnableMongoRepositories({"com.ecommerce.bakerymanagement.mongodb.repository"})
 @PropertySources(value = { @PropertySource("classpath:/application.properties") })
 public class BakerymanagementApplication extends SpringBootServletInitializer {
 

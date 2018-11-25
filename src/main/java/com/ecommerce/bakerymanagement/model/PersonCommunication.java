@@ -2,6 +2,8 @@ package com.ecommerce.bakerymanagement.model;
 
 import java.sql.Timestamp;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -15,10 +17,13 @@ import lombok.Data;
  * @author Danish
  *
  */
+@Document(collection = "user.person_communication")
 @JsonIgnoreProperties
 @Data
 @Component
 public class PersonCommunication {
+
+	@Id
 	private long personCommunicationId;
 	private long communicationType;
 	private long subType;

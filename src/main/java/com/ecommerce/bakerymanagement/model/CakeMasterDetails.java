@@ -5,17 +5,25 @@ import java.sql.Timestamp;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.IndexDirection;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import lombok.Builder;
 import lombok.Data;
+
+
+/**
+ * It is cakeMasterDetails Bean Class.
+ * 
+ * @author Danish
+ *
+ */
 
 @Document(collection="Bakery_manangement.cake_master")
 @Data
-@Builder
 @Component
 public class CakeMasterDetails {
 
@@ -31,6 +39,7 @@ public class CakeMasterDetails {
 	@NotNull
 	private String category;
 
+	@Indexed(direction=IndexDirection.ASCENDING)
 	private Double price;
 
 	@NotNull
@@ -46,10 +55,10 @@ public class CakeMasterDetails {
 	private Timestamp lastModifiedDate;
 
 
-	@Builder.Default
+//	@Builder.Default
 	private Long createdUserId =1L;
 
-	@Builder.Default
+//	@Builder.Default
 	private Long lastModifiedUserId= 1L;
 
 }

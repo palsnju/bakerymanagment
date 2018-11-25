@@ -10,13 +10,18 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import lombok.Builder;
 import lombok.Data;
 
+
+/**
+ * It is BiscuitsMasterDetails Bean Class.
+ * 
+ * @author Danish
+ *
+ */
 @Document(collection="Bakery_manangement.biscuits_master")
 @Data
 @Component
-@Builder
 public class BiscuitsMasterDetails {
 
 	@Id
@@ -40,10 +45,11 @@ public class BiscuitsMasterDetails {
 	@JsonFormat(pattern = "MMM dd, yyyy hh:mm:ss aa")
 	private Timestamp lastModifiedDate;
 
-	@Builder.Default
+	/*@Builder.Default
+	@Validated
 	private Long createdUserId =1L;
 
 	@Builder.Default
-	private Long lastModifiedUserId =1L;
+	private Long lastModifiedUserId =1L;*/
 
 }

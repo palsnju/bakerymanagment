@@ -1,9 +1,10 @@
 package com.ecommerce.bakerymanagement.aspect;
 
-import org.apache.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Configuration
 public class LoggerAspect {
 
-	private static final Logger logger = Logger.getLogger(LoggerAspect.class);
+	private static final Logger logger =  LoggerFactory.getLogger(ExceptionAspect.class);
 
 	@Around("execution(* com.ecommerce.bakerymanagement..*.*(..))")
 	public Object aroundAdviceForAllMethods(ProceedingJoinPoint joinPoint) throws Throwable {

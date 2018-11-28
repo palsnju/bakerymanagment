@@ -1,5 +1,7 @@
 package com.ecommerce.bakerymanagement.biz.client.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +19,22 @@ public class BakeryManagementClientImpl implements IBakeryManagementMasterClient
 	@Override
 	public void saveCakeMasterDetails(CakeMasterDetails cakeMasterDetails) throws BakeryConfigurationException {
 		
-		cakeRepositry.save(cakeMasterDetails);
+		try {
+			cakeRepositry.save(cakeMasterDetails);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public List<CakeMasterDetails> getCakeList() throws BakeryConfigurationException {
+		
+		try {
+			return cakeRepositry.findAll();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }
